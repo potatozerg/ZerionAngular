@@ -1,0 +1,23 @@
+<!-- List View -->
+<div class="top">
+  <div class="nav">
+    <i class="ion-trash-a" ng-click="delete()">DELETE DOCUMENT</i>
+  </div>
+</div>
+
+<div class="listView">
+  <table id="list">
+    <tr>
+      <th width="10%">Select</th>
+      <th width="10%">Name</th>
+      <th width="30%">Description</th>
+      <th width="50%">Image URLs</th>
+    </tr>
+    <tr ng-repeat="d in documents">
+      <td width="10%"><input type="checkbox" ng-model="d.delete"></td>
+      <td width="10%">{{d.name}}</td>
+      <td width="30%">{{d.description}}</td>
+      <td width="50%">{{d.imgs[0].url}}</td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+    <base href="/">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+
+    <script src="services/api.js"></script>
+
+    <script src="templates/detail/detailController.js"></script>
+    <script src="templates/list/listController.js"></script>
+    <script src="controllers.js"></script>
+
+
+  </head>
+  <body ng-app="mainApp" ng-controller="mainCtrl">
+
+    <div class="top">
+      <div class="title">
+        <h1>Documents</h1>
+      </div>
+      <div class="nav">
+        <i class="ion-grid" ng-click="changeView('tile')"> TILE VIEW</i>
+        <i class="ion-navicon-round" ng-click="changeView('list')"> LIST VIEW</i>
+        <i class="ion-plus-round" ng-click="changeView('new')"> NEW DOCUMENT</i>
+      </div>
+    </div>
+
+    <div ng-view></div>
+
+  </body>
+</html>

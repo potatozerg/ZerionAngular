@@ -1,0 +1,11 @@
+<!-- Tile View -->
+<div class="tileView row">
+  <div class="contentbox col-sm-4" ng-repeat="d in documents" ng-click="detailView(d)">
+    <img ng-src="{{d.imgs[0].url}}"></img>
+    <div class="textbox">
+      <h4>{{d.name}}</h3>
+      <hr>
+      <p>{{d.description}}</p>
+    </div>
+  </div>
+</div>
