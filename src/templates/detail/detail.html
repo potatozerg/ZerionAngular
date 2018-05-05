@@ -1,11 +1,17 @@
 <!-- Detail View -->
 <div class="detailView">
   <p>Name</p>
-  <input ng-model="new.name">
+  <input ng-model="new.name" ng-change="saveData()">
   <p>Description</p>
-  <input ng-model="new.description">
+  <input ng-model="new.description" ng-change="saveData()">
   <p>Image URLs</p>
-  <input ng-model="new.imgs[0].url">
+  <div ng-repeat="img in new.imgs">
+    <input ng-model="img.url" ng-change="saveData()">
+    <button ng-click="removeImg($index)">-</button>
+  </div>
+  <button ng-click="addImg()">+</button>
+
+
   <div class="buttons">
     <button id="back" ng-click="back()">Back</button>
     <button id="save" ng-click="save()">Save</button>

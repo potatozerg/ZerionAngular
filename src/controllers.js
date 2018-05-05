@@ -10,7 +10,9 @@ app.controller('mainCtrl', ['$scope', '$location', 'httpCalls', '$rootScope',
 				$scope.documents = res.data;
         $rootScope.documents = res.data;
 				$scope.changeView('tile');
-			});
+			}, function(error) {
+        console.log(error);
+      });
 	};
 
 	// Get all documents and set the default view
@@ -36,12 +38,12 @@ app.controller('mainCtrl', ['$scope', '$location', 'httpCalls', '$rootScope',
     $rootScope.new = {
   		name: '',
   		description: '',
-  		imgs: [{url: ''}]
+  		imgs: []
   	};
 		$rootScope.new._id = d._id;
 		$rootScope.new.name = d.name;
 		$rootScope.new.description = d.description;
-		$rootScope.new.imgs[0].url = d.imgs[0].url;
+		$rootScope.new.imgs = d.imgs;
     $location.path('/detail');
 	};
 

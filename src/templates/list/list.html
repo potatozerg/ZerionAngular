@@ -17,7 +17,7 @@
       <td width="10%"><input type="checkbox" ng-model="d.delete"></td>
       <td width="10%">{{d.name}}</td>
       <td width="30%">{{d.description}}</td>
-      <td width="50%">{{d.imgs[0].url}}</td>
+      <td width="50%"><p ng-repeat="img in d.imgs">{{img.url}}</p></td>
     </tr>
   </table>
 </div>
