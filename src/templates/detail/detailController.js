@@ -1,7 +1,8 @@
+// Standard AngularJs controller, clean code
 angular.module('controllers', [])
   .controller('detailCtrl', ['$scope', '$location', 'httpCalls', '$rootScope', '$window',
     function($scope, $location, httpCalls, $rootScope, $window){
-
+    
     // initialize
   	$scope.new = {
   		name: '',
